@@ -1,3 +1,15 @@
+## v0.11.4:
+
+### Bug
+
+- [COOK-3144]: Wrong service name in samba cookbook
+
+## v0.11.2:
+
+### Bug
+
+- [COOK-2978]: samba cookbook has foodcritic errors
+
 ## v0.11.0:
 
 * [COOK-1719] - Add Scientific / Amazon support to the Samba recipe

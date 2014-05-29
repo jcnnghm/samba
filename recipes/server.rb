@@ -58,11 +58,14 @@ template node["samba"]["config"] do
   group "root"
   mode 00644
   variables :shares => shares["shares"]
-  notifies :restart, resources(:service => svcs)
+  svcs.each do |s|
+    notifies :restart, "service[#{s}]"
+  end
 end
 
 if users
   users.each do |u|
+    next unless u["smbpasswd"]
     samba_user u["id"] do
       password u["smbpasswd"]
       action [:create, :enable]
